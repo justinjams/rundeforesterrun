@@ -253,8 +253,8 @@ class Player {
 
     gfx.y -= gfx.vy;
 
-    if (this.jumping) this.jumping();
     this.checkFloor();
+    if (this.jumping) this.jumping();
     if (this.consuming-- > 0) this.gfx.texture = this.textures.chomp;
 
     if (gfx.y > WINDOW_HEIGHT) {
@@ -289,7 +289,7 @@ class Player {
     let gfx = this.gfx;
     let floor = this.floor;
     if (floor) {
-      if (gfx.x + gfx.width/2 > floor.gfx.x + floor.gfx.width) {
+      if (gfx.x + gfx.halfWidth > floor.gfx.x + floor.gfx.width) {
         this.floor = null;
       }
     } else {
@@ -297,7 +297,7 @@ class Player {
       let minDistFloor;
       floors.forEach(floor => {
         let distY = floor.top - gfx.y - gfx.height/2;
-        if (gfx.x + gfx.width/2 > floor.gfx.x && distY > 0 && distY < minDist) {
+        if (gfx.x + gfx.width >= floor.gfx.x && distY > 0 && distY < minDist) {
           minDist = distY;
           minDistFloor = floor;
         }
