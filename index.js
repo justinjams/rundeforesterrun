@@ -7,7 +7,7 @@ app.get('/', function (req, res) {
  res.sendFile('index.html', { root: __dirname});
 });
 
-app.listen(3000, function () {
+app.listen(process.env.PORT || 3000, function () {
   console.log('We online');
 });
 
