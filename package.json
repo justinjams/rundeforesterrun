@@ -1,0 +1,17 @@
+{
+  "name": "run-deforester-run",
+  "version": "1.0.0",
+  "description": "Run Deforester, Run!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jammies",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.3"
+  },
+  "devDependencies": {
+    "livereload": "^0.6.2"
+  }
+}
