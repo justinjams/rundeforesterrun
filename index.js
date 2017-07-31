@@ -11,6 +11,8 @@ app.listen(3000, function () {
   console.log('We online');
 });
 
-var livereload = require('livereload');
-var server = livereload.createServer();
-server.watch(__dirname + "/public");
+if (process.env.NODE_ENV === 'development') {
+	var livereload = require('livereload');
+	var server = livereload.createServer();
+	server.watch(__dirname + "/public");
+}
